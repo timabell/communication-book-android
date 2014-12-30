@@ -1,6 +1,7 @@
 package uk.co.timwise.communicationbook;
 
 import android.content.Context;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,12 +10,16 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements TextToSpeech.OnInitListener {
+
+    private TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // tts setup
+        tts = new TextToSpeech(this, this);
     }
 
 
@@ -41,8 +46,23 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void speak(View view){
+        speak("Hello there, pumpkin!");
+    }
+
+    private void speak(String s) {
+        toast("speaking your message");
+        tts.speak(s, TextToSpeech.QUEUE_FLUSH, null, "commsbook1");
+    }
+
+    private void toast(String text) {
         Context context = getApplicationContext();
-        Toast toast = Toast.makeText(context, "speaking your message", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    // tts init handler
+    @Override
+    public void onInit(int status) {
+        toast("tts initialized");
     }
 }
