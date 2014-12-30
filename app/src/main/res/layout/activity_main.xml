@@ -25,7 +25,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Speak!"
             android:id="@+id/button_speak"
             android:onClick="speak" />
     </LinearLayout>
