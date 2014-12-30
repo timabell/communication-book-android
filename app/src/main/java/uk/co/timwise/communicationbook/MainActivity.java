@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
 
     private void speak(String s) {
         toast("speaking your message");
-        tts.speak(s, TextToSpeech.QUEUE_FLUSH, null, "commsbook1");
+        tts.speak(s, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     private void toast(String text) {
