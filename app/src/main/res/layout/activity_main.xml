@@ -26,7 +26,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="New Button"
-            android:id="@+id/button_speak" />
+            android:id="@+id/button_speak"
+            android:onClick="speak" />
     </LinearLayout>
 
 </RelativeLayout>
