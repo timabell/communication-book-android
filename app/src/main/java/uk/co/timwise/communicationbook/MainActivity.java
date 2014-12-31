@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -29,6 +30,12 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
         //todo
         GridView gridview = (GridView)findViewById(R.id.grid_library);
         gridview.setAdapter(new LibraryAdapter(this));
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                toast("clicky droid");
+            }
+        });
         toast("library loaded");
     }
 
