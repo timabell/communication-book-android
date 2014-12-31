@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -33,10 +35,18 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toast("clicky droid");
+                addToSentence();
             }
         });
         toast("library loaded");
+    }
+
+    private void addToSentence() {
+        toast("add to sentence...");
+        LinearLayout sentence = (LinearLayout)findViewById(R.id.sentence_layout);
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.ic_launcher);
+        sentence.addView(imageView);
     }
 
 

@@ -14,7 +14,14 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/sentence_view"
-            android:background="#ffdae9ff" />
+            android:background="#ffdae9ff" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/sentence_layout"></LinearLayout>
+        </HorizontalScrollView>
 
         <GridView
             android:layout_width="fill_parent"
