@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.Toast;
 
 
@@ -20,6 +21,15 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
         setContentView(R.layout.activity_main);
         // tts setup
         tts = new TextToSpeech(this, this);
+        loadLibrary();
+    }
+
+    private void loadLibrary() {
+        toast("loading library...");
+        //todo
+        GridView gridview = (GridView)findViewById(R.id.grid_library);
+        gridview.setAdapter(new LibraryAdapter(this));
+        toast("library loaded");
     }
 
 

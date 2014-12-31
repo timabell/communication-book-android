@@ -20,7 +20,9 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/grid_library"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:columnWidth="100dp"
+            android:numColumns="auto_fit" />
 
         <Button
             android:layout_width="fill_parent"
