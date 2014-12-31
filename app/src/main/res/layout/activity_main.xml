@@ -12,7 +12,7 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:id="@+id/sentence_view"
             android:background="#ffdae9ff" >
 
@@ -29,7 +29,9 @@
             android:id="@+id/grid_library"
             android:layout_weight="1"
             android:columnWidth="100dp"
-            android:numColumns="auto_fit" />
+            android:numColumns="auto_fit"
+            android:verticalSpacing="2dp"
+            android:horizontalSpacing="2dp" />
 
         <Button
             android:layout_width="fill_parent"
