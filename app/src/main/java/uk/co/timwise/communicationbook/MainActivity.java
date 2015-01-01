@@ -1,6 +1,7 @@
 package uk.co.timwise.communicationbook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -66,6 +67,8 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
