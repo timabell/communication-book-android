@@ -21,6 +21,12 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        boolean libraryExists = false; // hard-coded till test implemented
+        if (!libraryExists){
+            Intent intent = new Intent(this, StartupActivity.class);
+            startActivity(intent);
+            return;
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // tts setup
