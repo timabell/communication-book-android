@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements TextToSpeech.OnInitListener {
 
+    private static final int SETTINGS_RESULT = 1;
     private TextToSpeech tts;
 
     @Override
@@ -68,7 +69,7 @@ public class MainActivity extends ActionBarActivity implements TextToSpeech.OnIn
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, SETTINGS_RESULT);
             return true;
         }
 
